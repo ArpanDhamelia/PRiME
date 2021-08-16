@@ -1,0 +1,10 @@
+.gallery__item {
+  padding: 5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  height: 50%;
+}

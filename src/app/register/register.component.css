@@ -1,0 +1,12 @@
+input{
+  margin-bottom: 50px;
+
+}
+input:focus{
+  color: #002366;
+}
+
+button{
+  margin-top: 40px;
+  background-color: #002366;
+}

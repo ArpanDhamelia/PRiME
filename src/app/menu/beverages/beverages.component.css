@@ -1,0 +1,20 @@
+table{
+  background-color: #050A30;
+  color: azure;
+  text-align: center;
+  padding: 1rem;
+}
+tr{
+  border: 3px solid white;
+}
+
+.price{
+  color: #DAA520;
+}
+
+h1{
+  text-align: center;
+  color: #DAA520;
+  background-color: #050A30;
+  padding: 1rem;
+}
