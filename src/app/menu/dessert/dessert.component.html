@@ -7,30 +7,144 @@
     <div class="row">
       <div class="col-md-6">
         <h1 style="text-align: center;">KULFI'S</h1>
-        <table class="table">
-          <tr>
-            <td><h4>Lychee Rabri Kulfi </h4></td>
-            <td> <h4 class="price">120/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Malai</h4>
-            <td> <h4 class="price">100/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Pista </h4></td>
-            <td> <h4 class="price">70/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Chikoo </h4></td>
-            <td> <h4 class="price">70/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Kaju Draksh </h4></td>
-            <td> <h4  class="price">80/-</h4> </td>
-          </tr>
-        </table>
+        <div class="">
+          <cdk-accordion>
+            <cdk-accordion-item
+            *ngFor="let k of kulfi; let index = index;"
+            #accordionItem="cdkAccordionItem"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+            >
+              <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+                <tr>
+                  <td><h4> {{k.name}} </h4></td>
+                  <td><h4 class="price">{{k.price}}</h4></td>
+                </tr>
+              </div>
+              <div
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index">
+                <div class="card" >
+                  <img class="card-img-top" [src]="k.image" style="height: 70%;">
+
+                  <div class="card-body">
+                    <h4 class="card-text"> {{k.description}} </h4>
+                  </div>
+              </div>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+      </div>
         <h1>ICE-CREAM'S</h1>
-        <table class="table">
+        <div class="">
+          <cdk-accordion>
+            <cdk-accordion-item
+            *ngFor="let i of ice; let index = index;"
+            #accordionItem="cdkAccordionItem"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+            >
+              <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+                <tr>
+                  <td><h4> {{i.name}} </h4></td>
+                  <td><h4 class="price">{{i.price}}</h4></td>
+                </tr>
+              </div>
+              <div
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index">
+                <div class="card" >
+                  <img class="card-img-top" [src]="i.image" style="height: 70%;">
+
+                  <div class="card-body">
+                    <h4 class="card-text"> {{i.description}} </h4>
+                  </div>
+              </div>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+      </div>
+
+      </div>
+      <div class="col-md-6">
+          <h1 >PRiME EXCLUSIVE'S</h1>
+          <div class="">
+            <cdk-accordion>
+              <cdk-accordion-item
+              *ngFor="let e of exc; let index = index;"
+              #accordionItem="cdkAccordionItem"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+              >
+                <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+                  <tr>
+                    <td><h4> {{e.name}} </h4></td>
+                    <td><h4 class="price">{{e.price}}</h4></td>
+                  </tr>
+                </div>
+                <div
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index">
+                  <div class="card" >
+                    <img class="card-img-top" [src]="e.image" style="height: 70%;">
+
+                    <div class="card-body">
+                      <h4 class="card-text"> {{e.description}} </h4>
+                    </div>
+                </div>
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- <table class="table">
+    <tr>
+      <td><h4>Lychee Rabri Kulfi </h4></td>
+      <td> <h4 class="price">120/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Malai</h4>
+      <td> <h4 class="price">100/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Pista </h4></td>
+      <td> <h4 class="price">70/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Chikoo </h4></td>
+      <td> <h4 class="price">70/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Kaju Draksh </h4></td>
+      <td> <h4  class="price">80/-</h4> </td>
+    </tr>
+  </table>
+
+
+
+<table class="table">
           <tr>
             <td><h4>Vanilla </h4></td>
             <td> <h4 class="price">120/-</h4> </td>
@@ -56,11 +170,7 @@
             <td> <h4 class="price">150/-</h4> </td>
           </tr>
         </table>
-
-      </div>
-      <div class="col-md-6">
-          <h1 >PRiME EXCLUSIVE'S</h1>
-          <table  class="table">
+<table  class="table">
             <tr>
               <td><h4>Chukandar Ka Halwa With Vanilla Ice Cream</h4></td>
               <td> <h4 class="price">200/-</h4> </td>
@@ -82,11 +192,4 @@
               <td> <h4 class="price">230/-</h4> </td>
             </tr>
           </table>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
+-->

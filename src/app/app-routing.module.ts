@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { CarouselComponent } from './carousel/carousel.component';
 import { AppetizerComponent } from './menu/appetizer/appetizer.component';
 import { BeveragesComponent } from './menu/beverages/beverages.component';
 import { DessertComponent } from './menu/dessert/dessert.component';
@@ -9,7 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'menu' , pathMatch: 'full'},
+  {path: '', component: CarouselComponent},
   {path: 'menu', component: MenuComponent,  children:
   [
     { path : '' , redirectTo:  'appetizers' , pathMatch:  'full'},

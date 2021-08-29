@@ -1,10 +1,35 @@
-.gallery__item {
-  padding: 5rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+.caro{
+
+  height: 80%;
+  width: 80%;
+}
+div{
+  text-align: center;
+  position: relative;
+  color: azure;
+}
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cont{
   width: 100%;
-  position: fixed;
-  overflow: hidden;
-  height: 50%;
+  position: relative;
+}
+a{
+  text-decoration: none;
+  color: azure;
+}
+a:hover{
+  text-decoration: none;
+  color: black;
+}
+h3:hover{
+  background-color: azure;
+  color: black;
+}
+img{
+  opacity: 0.8;
 }

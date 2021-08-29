@@ -7,70 +7,181 @@
     <div class="row">
       <div class="col-md-6">
         <h1 style="text-align: center;">Veg</h1>
-        <table class="table" style="text-align: center; padding: 1rem;">
-          <tr>
-            <td><h4>Paneer Tikka </h4></td>
-            <td> <h4 class="price">180/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Kadai Paneer </h4></td>
-            <td> <h4 class="price">160/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Butter paneer Masala </h4></td>
-            <td> <h4 class="price">180/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Mutter paneer </h4></td>
-            <td> <h4 class="price">180/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Sev Tamatar </h4></td>
-            <td> <h4  class="price">100/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Bhindi Masala </h4></td>
-            <td> <h4 class="price">120/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Palak Paneer </h4></td>
-            <td> <h4 class="price">180/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Malai </h4></td>
-            <td> <h4 class="price">110/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Kofta </h4></td>
-            <td> <h4 class="price">150/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Malai Kofta </h4></td>
-            <td> <h4 class="price">150/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Jeera Aloo </h4></td>
-            <td> <h4 class="price">100/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Aloo Gobhi </h4></td>
-            <td> <h4 class="price">120/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Kaju Curry </h4></td>
-            <td> <h4  class="price">160/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Butter Paneer </h4></td>
-            <td> <h4 class="price">200/-</h4> </td>
-          </tr>
+        <div class="">
+          <cdk-accordion>
+            <cdk-accordion-item
+            *ngFor="let main of veg; let index = index;"
+            #accordionItem="cdkAccordionItem"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+            >
+              <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+                <tr>
+                  <td><h4> {{main.name}} </h4></td>
+                  <td><h4 class="price">{{main.price}}</h4></td>
+                </tr>
+              </div>
+              <div
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index">
+                <div class="card" >
+                  <img class="card-img-top" [src]="main.image" style="height: 70%;">
 
-        </table>
+                  <div class="card-body">
+                    <h4 class="card-text"> {{main.description}} </h4>
+                  </div>
+              </div>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+      </div>
 
       </div>
       <div class="col-md-6">
           <h1 style="text-align: center;">Non-Veg</h1>
-          <table  class="table">
+          <div class="">
+            <cdk-accordion>
+              <cdk-accordion-item
+              *ngFor="let main of nonveg; let index = index;"
+              #accordionItem="cdkAccordionItem"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+              >
+                <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+                  <tr>
+                    <td><h4> {{main.name}} </h4></td>
+                    <td><h4 class="price">{{main.price}}</h4></td>
+                  </tr>
+                </div>
+                <div
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index">
+                  <div class="card" >
+                    <img class="card-img-top" [src]="main.image" style="height: 70%;">
+
+                    <div class="card-body">
+                      <h4 class="card-text"> {{main.description}} </h4>
+                    </div>
+                </div>
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
+        </div>
+          <h1>BREADS</h1>
+          <div class="">
+            <cdk-accordion>
+              <cdk-accordion-item
+              *ngFor="let main of breads; let index = index;"
+              #accordionItem="cdkAccordionItem"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+              >
+                <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+                  <tr>
+                    <td><h4> {{main.name}} </h4></td>
+                    <td><h4 class="price">{{main.price}}</h4></td>
+                  </tr>
+                </div>
+                <div
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index">
+                  <div class="card" >
+                    <img class="card-img-top" [src]="main.image" style="height: 70%;">
+
+                    <div class="card-body">
+                      <h4 class="card-text"> {{main.description}} </h4>
+                    </div>
+                </div>
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- <section class="menu-section">
+        <h1 style="padding: 0.5rem 1rem;">Indian Main Course</h1>
+        <div class="menu-section-header">
+          <h1 style="padding: 0.5rem 1rem;">Veg</h1>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> <h4>Paneer Tikka --180/-</h4> </li>
+          <li class="list-group-item">Kadai Paneer --180/-</li>
+          <li class="list-group-item">Butter paneer Masala --180/-</li>
+          <li class="list-group-item">Mutter paneer --180/-</li>
+          <li class="list-group-item">Sev Tamatar --180/-</li>
+          <li class="list-group-item">Mix Veg --180/-</li>
+        </ul>
+      </section>
+ -->
+
+ <!-- <table class="table" style="text-align: center; padding: 1rem;">
+  <tr>
+    <td><h4>Paneer Tikka </h4></td>
+    <td> <h4 class="price">180/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Kadai Paneer </h4></td>
+    <td> <h4 class="price">160/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Butter paneer Masala </h4></td>
+    <td> <h4 class="price">180/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Mutter paneer </h4></td>
+    <td> <h4 class="price">180/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Sev Tamatar </h4></td>
+    <td> <h4  class="price">100/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Bhindi Masala </h4></td>
+    <td> <h4 class="price">120/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Palak Paneer </h4></td>
+    <td> <h4 class="price">180/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Malai Kofta </h4></td>
+    <td> <h4 class="price">150/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Jeera Aloo </h4></td>
+    <td> <h4 class="price">100/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Aloo Gobhi </h4></td>
+    <td> <h4 class="price">120/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Kaju Curry </h4></td>
+    <td> <h4  class="price">160/-</h4> </td>
+  </tr>
+  <tr>
+    <td><h4>Butter Paneer </h4></td>
+    <td> <h4 class="price">200/-</h4> </td>
+  </tr>
+
+</table>
+<table  class="table">
             <tr>
               <td><h4>Butter Chicken </h4></td>
               <td> <h4 class="price">200/-</h4> </td>
@@ -97,8 +208,7 @@
             </tr>
 
           </table>
-          <h1>BREADS</h1>
-          <table class="table">
+<table class="table">
             <tr>
               <td><h4>Butter Naan </h4></td>
               <td> <h4 class="price">50/-</h4> </td>
@@ -125,23 +235,6 @@
               <td> <h4 class="price">40/-</h4> </td>
             </tr>
           </table>
-      </div>
-    </div>
-  </div>
-<!-- <section class="menu-section">
-        <h1 style="padding: 0.5rem 1rem;">Indian Main Course</h1>
-        <div class="menu-section-header">
-          <h1 style="padding: 0.5rem 1rem;">Veg</h1>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"> <h4>Paneer Tikka --180/-</h4> </li>
-          <li class="list-group-item">Kadai Paneer --180/-</li>
-          <li class="list-group-item">Butter paneer Masala --180/-</li>
-          <li class="list-group-item">Mutter paneer --180/-</li>
-          <li class="list-group-item">Sev Tamatar --180/-</li>
-          <li class="list-group-item">Mix Veg --180/-</li>
-        </ul>
-      </section>
- -->
 
 
+-->

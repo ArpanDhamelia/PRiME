@@ -1,10 +1,7 @@
-table{
+/* .table{
   background-color: #050A30;
   color: azure;
 
-}
-tr{
-  border: 3px solid white;
 }
 
 .price{
@@ -15,4 +12,40 @@ h1{
   color: #DAA520;
   background-color: #050A30;
   padding: 1rem;
+}
+.card-text{
+  color: #050A30;
+}
+
+tr{
+  border: 0px;
+}
+
+ */
+ .table{
+  background-color: #050A30;
+  color: azure;
+  margin-bottom: 0px;
+}
+/* tr{
+  border: 3px solid white;
+} */
+
+.price{
+  color: #DAA520;
+}
+
+h1{
+  text-align: center;
+  color: #DAA520;
+  background-color: #050A30;
+  padding: 1rem;
+}
+
+tr{
+  border: 0px;
+}
+
+.card-text{
+  color: #050A30;
 }

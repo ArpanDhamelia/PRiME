@@ -12,6 +12,7 @@ import { MainCourseComponent } from './menu/main-course/main-course.component';
 import { AppetizerComponent } from './menu/appetizer/appetizer.component';
 import { BeveragesComponent } from './menu/beverages/beverages.component';
 import { DessertComponent } from './menu/dessert/dessert.component';
+import { CdkAccordionModule } from '@angular/cdk/accordion'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DessertComponent } from './menu/dessert/dessert.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CdkAccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

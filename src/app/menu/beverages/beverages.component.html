@@ -7,81 +7,204 @@
     <div class="row">
       <div class="col-md-6">
         <h1 style="text-align: center;">Juices/Sharbats</h1>
-        <table class="table">
-          <tr>
-            <td><h4>Aam Panna </h4></td>
-            <td> <h4 class="price">100/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Fruit juice  <br>
-            <p style="color: #DAA520;">Apple/Chikoo/Water Melon/Mush Melon/Pineapple</p> </h4></td>
-            <td> <h4 class="price">100/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Jal-jeera </h4></td>
-            <td> <h4 class="price">70/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Lemonade </h4></td>
-            <td> <h4 class="price">70/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Kokum </h4></td>
-            <td> <h4  class="price">80/-</h4> </td>
-          </tr>
-        </table>
-        <h1>Milkshakes</h1>
-        <table class="table">
-          <tr>
-            <td><h4>Vanilla </h4></td>
-            <td> <h4 class="price">120/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Butterscotch </h4></td>
-            <td> <h4 class="price">180/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Strawberry </h4></td>
-            <td> <h4 class="price">150/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Mango </h4></td>
-            <td> <h4 class="price">150/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Pineapple </h4></td>
-            <td> <h4 class="price">150/-</h4> </td>
-          </tr>
-          <tr>
-            <td><h4>Choclate </h4></td>
-            <td> <h4 class="price">150/-</h4> </td>
-          </tr>
-        </table>
+        <div class="">
+          <cdk-accordion>
+            <cdk-accordion-item
+            *ngFor="let juice of juices; let index = index;"
+            #accordionItem="cdkAccordionItem"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index"
+            >
+              <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+                <tr>
+                  <td><h4> {{juice.name}} </h4></td>
+                  <td><h4 class="price">{{juice.price}}</h4></td>
+                </tr>
+              </div>
+              <div
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index">
+                <div class="card" >
+                  <img class="card-img-top" [src]="juice.image" style="height: 70%;">
 
+                  <div class="card-body">
+                    <h4 class="card-text"> {{juice.description}} </h4>
+                  </div>
+              </div>
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
       </div>
+      <h1>Milkshakes</h1>
+      <div>
+      <cdk-accordion>
+        <cdk-accordion-item
+        *ngFor="let milk of milkshakes; let index = index;"
+        #accordionItem="cdkAccordionItem"
+        role="button"
+        tabindex="0"
+        [attr.id]="'accordion-header-' + index"
+        [attr.aria-expanded]="accordionItem.expanded"
+        [attr.aria-controls]="'accordion-body-' + index"
+        >
+          <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+            <tr>
+              <td><h4> {{milk.name}} </h4></td>
+              <td><h4 class="price">{{milk.price}}</h4></td>
+            </tr>
+          </div>
+          <div
+          role="region"
+          [style.display]="accordionItem.expanded ? '' : 'none'"
+          [attr.id]="'accordion-body-' + index"
+          [attr.aria-labelledby]="'accordion-header-' + index">
+            <div class="card" >
+              <img class="card-img-top" [src]="milk.image" style="height: 70%;">
+
+              <div class="card-body">
+                <h4 class="card-text"> {{milk.description}} </h4>
+              </div>
+          </div>
+        </div>
+      </cdk-accordion-item>
+    </cdk-accordion>
+  </div>
+</div>
+
       <div class="col-md-6">
           <h1 >Frooty Shakes</h1>
-          <table  class="table">
-            <tr>
-              <td><h4>Sitaphal </h4></td>
-              <td> <h4 class="price">200/-</h4> </td>
-            </tr>
-            <tr>
-              <td><h4>Rasberry </h4></td>
-              <td> <h4 class="price"> 210/-</h4> </td>
-            </tr>
-            <tr>
-              <td><h4>Blueberry </h4></td>
-              <td> <h4 class="price">200/-</h4> </td>
-            </tr>
-            <tr>
-              <td><h4>Kaju </h4></td>
-              <td> <h4 class="price">230/-</h4> </td>
-            </tr>
+          <div class="">
+            <cdk-accordion>
+              <cdk-accordion-item
+              *ngFor="let f of frooty; let index = index;"
+              #accordionItem="cdkAccordionItem"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+              >
+                <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+                  <tr>
+                    <td><h4> {{f.name}} </h4></td>
+                    <td><h4 class="price">{{f.price}}</h4></td>
+                  </tr>
+                </div>
+                <div
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index">
+                  <div class="card" >
+                    <img class="card-img-top" [src]="f.image" style="height: 70%;">
 
-          </table>
+                    <div class="card-body">
+                      <h4 class="card-text"> {{f.description}} </h4>
+                    </div>
+                </div>
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
+        </div>
+
           <h1>Sodas</h1>
-          <table class="table">
+          <div class="">
+            <cdk-accordion>
+              <cdk-accordion-item
+              *ngFor="let soda of sodas; let index = index;"
+              #accordionItem="cdkAccordionItem"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+              >
+                <div (click)="accordionItem.toggle()" style="text-align: center; border: 3px solid white;" class="table">
+                  <tr>
+                    <td><h4> {{soda.name}} </h4></td>
+                    <td><h4 class="price">{{soda.price}}</h4></td>
+                  </tr>
+                </div>
+                <div
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index">
+                  <div class="card" >
+                    <img class="card-img-top" [src]="soda.image" style="height: 70%;">
+
+                    <div class="card-body">
+                      <h4 class="card-text"> {{soda.description}} </h4>
+                    </div>
+                </div>
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  <!-- <table class="table">
+    <tr>
+      <td><h4>Aam Panna </h4></td>
+      <td> <h4 class="price">100/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Fruit juice  <br>
+      <p style="color: #DAA520;">Apple/Chikoo/Water Melon/Mush Melon/Pineapple</p> </h4></td>
+      <td> <h4 class="price">100/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Jal-jeera </h4></td>
+      <td> <h4 class="price">70/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Lemonade </h4></td>
+      <td> <h4 class="price">70/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Kokum </h4></td>
+      <td> <h4  class="price">80/-</h4> </td>
+    </tr>
+  </table>
+  <h1>Milkshakes</h1>
+  <table class="table">
+    <tr>
+      <td><h4>Vanilla </h4></td>
+      <td> <h4 class="price">120/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Butterscotch </h4></td>
+      <td> <h4 class="price">180/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Strawberry </h4></td>
+      <td> <h4 class="price">150/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Mango </h4></td>
+      <td> <h4 class="price">150/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Pineapple </h4></td>
+      <td> <h4 class="price">150/-</h4> </td>
+    </tr>
+    <tr>
+      <td><h4>Choclate </h4></td>
+      <td> <h4 class="price">150/-</h4> </td>
+    </tr>
+  </table>
+
+<table class="table">
             <tr>
               <td><h4>Coca-Cola </h4></td>
               <td> <h4 class="price">90/-</h4> </td>
@@ -104,10 +227,23 @@
             </tr>
 
           </table>
-      </div>
-    </div>
-  </div>
+          <table  class="table">
+            <tr>
+              <td><h4>Sitaphal </h4></td>
+              <td> <h4 class="price">200/-</h4> </td>
+            </tr>
+            <tr>
+              <td><h4>Rasberry </h4></td>
+              <td> <h4 class="price"> 210/-</h4> </td>
+            </tr>
+            <tr>
+              <td><h4>Blueberry </h4></td>
+              <td> <h4 class="price">200/-</h4> </td>
+            </tr>
+            <tr>
+              <td><h4>Kaju </h4></td>
+              <td> <h4 class="price">230/-</h4> </td>
+            </tr>
 
-
-
-
+          </table>
+-->

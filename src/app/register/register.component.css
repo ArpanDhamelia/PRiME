@@ -3,10 +3,19 @@ input{
 
 }
 input:focus{
-  color: #002366;
+  outline-color: #002366;
 }
 
 button{
   margin-top: 40px;
-  background-color: #002366;
+  background-color: azure;
+  color: #002366;
+  width: 100%;
+  outline-color: #002366;
 }
+
+button:hover{
+  background-color: #002366;
+  color: azure;
+}
+
