@@ -8,6 +8,7 @@ import { DessertComponent } from './menu/dessert/dessert.component';
 import { MainCourseComponent } from './menu/main-course/main-course.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
+import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
   {path: '', component: CarouselComponent},
@@ -19,7 +20,9 @@ const routes: Routes = [
   { path:'beverages' ,component: BeveragesComponent },
   { path:'desserts' ,component: DessertComponent }]},
   {path: 'about' , component: AboutComponent},
-  {path: 'reserve', component: RegisterComponent}
+  {path: 'reserve', component: RegisterComponent},
+  {path : 'success', component: SuccessComponent}
+
 ];
 
 @NgModule({

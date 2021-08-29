@@ -1,45 +1,43 @@
-<div class="container" style="padding: 100px;">
-  <!-- <div class="row">
-    <div class="col"> -->
-      <div class="row">
-        <div class="col">
-          <input type="text" class="form-control" placeholder="First name">
-        </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Last name">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col"><input type="date" class="form-control" placeholder="Date"></div>
-      </div>
 
-      <div class="row">
-        <div class="col">
-          <input type="time" class="form-control" placeholder="Time">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col">
-          <select name="noOfPeople" class="form-control">
-            <option value="0" selected>No. of People</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8+">8+</option>
-          </select>
-        </div>
+<form (ngSubmit) = "onSubmit(f) " #f="ngForm">
+  <div class="container" style="padding: 100px;">
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First name" ngModel name="first">
       </div>
-      <!-- <div class="row">
-        <div class="col"> -->
-          <button type="button" class="btn btn-lg btn-block btn-outline-primary" style="text-align: center;">Book Table</button>
-<!--         </div>
-      </div> -->
-
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last name" ngModel name="last">
+      </div>
     </div>
-<!--   </div>
-</div> -->
+    <div class="row">
+      <div class="col"><input type="date" class="form-control" placeholder="Date" ngModel name="date"></div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <input type="time" class="form-control" placeholder="Time" ngModel name="time">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <select id="no" name="noOfPeople" class="form-control" ngModel>
+          <option value="0" selected>No. of People</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8+">8+</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-lg btn-block btn-outline-primary" style="text-align: center;" type = "submit" >  Book Table</button>
+  </div>
+
+</form>

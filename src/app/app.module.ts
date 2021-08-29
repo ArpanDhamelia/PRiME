@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +13,12 @@ import { MainCourseComponent } from './menu/main-course/main-course.component';
 import { AppetizerComponent } from './menu/appetizer/appetizer.component';
 import { BeveragesComponent } from './menu/beverages/beverages.component';
 import { DessertComponent } from './menu/dessert/dessert.component';
-import { CdkAccordionModule } from '@angular/cdk/accordion'
-
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
+import { SuccessComponent } from './success/success.component';
+import { PrimeService } from './shared/prime.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,14 +30,18 @@ import { CdkAccordionModule } from '@angular/cdk/accordion'
     MainCourseComponent,
     AppetizerComponent,
     BeveragesComponent,
-    DessertComponent
+    DessertComponent,
+    FooterComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CdkAccordionModule
+    CdkAccordionModule,
+    FontAwesomeModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [PrimeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
